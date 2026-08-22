@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Experiment 4 | Docker Frontend Lab</title>
+	<title>Experiment 1 | Git Operations Lab</title>
 	<style>
 		:root {
 			--ink: #17221b;
@@ -65,34 +65,34 @@
 <body>
 	<div class="shell">
 		<header>
-			<div class="brand"><span class="brand-mark" aria-hidden="true"></span> Docker Frontend Lab</div>
-			<div class="date">Experiment 04 / Container release</div>
+			<div class="brand"><span class="brand-mark" aria-hidden="true"></span> Git Operations Lab</div>
+			<div class="date">Experiment 01 / Repository workflow</div>
 		</header>
 		<main>
 			<section class="intro">
-				<h1>Clone, build,<br>run.</h1>
-				<p>A compact release board for packaging a frontend, starting it in Docker, and checking the container from the browser.</p>
+				<h1>Commit, share,<br>recover.</h1>
+				<p>A focused workspace for creating a repository, sharing changes with GitHub, and practicing the core Git collaboration workflow.</p>
 			</section>
 			<section class="grid" aria-label="Daily focus overview">
 				<article class="panel hero-panel">
 					<div>
-						<div class="eyebrow">Experiment 04 focus</div>
-						<h2 id="focus-title">Run the frontend in a container.</h2>
-						<button class="complete-button" id="focus-button" type="button">Mark image ready</button>
+						<div class="eyebrow">Experiment 01 focus</div>
+						<h2 id="focus-title">Create, share, and recover a Git repository.</h2>
+						<button class="complete-button" id="focus-button" type="button">Mark repository ready</button>
 					</div>
 					<div class="hero-foot"><span>0 of 3 checks complete</span><span class="progress" aria-label="0 percent complete"><span style="width: 0"></span></span></div>
 				</article>
 				<div class="side-stack">
 					<article class="panel stat-panel">
-						<div class="eyebrow">Container status</div>
-						<div class="stat">04</div>
-						<div class="stat-label">Docker experiment</div>
+						<div class="eyebrow">Repository status</div>
+						<div class="stat">01</div>
+						<div class="stat-label">Git experiment</div>
 					</article>
 					<article class="panel list-panel" aria-labelledby="next-up-title">
-						<h3 id="next-up-title">Container checklist</h3>
-						<button class="task" type="button"><span class="task-dot" aria-hidden="true"></span>Clone the frontend source</button>
-						<button class="task" type="button"><span class="task-dot" aria-hidden="true"></span>Build the Docker image</button>
-						<button class="task" type="button"><span class="task-dot" aria-hidden="true"></span>Run and inspect the app</button>
+						<h3 id="next-up-title">Git operations checklist</h3>
+						<button class="task" type="button"><span class="task-dot" aria-hidden="true"></span>Clone or initialize the repository</button>
+						<button class="task" type="button"><span class="task-dot" aria-hidden="true"></span>Push, fetch, merge, and pull changes</button>
+						<button class="task" type="button"><span class="task-dot" aria-hidden="true"></span>Practice reset, revert, fork, and clone</button>
 					</article>
 				</div>
 			</section>
@@ -120,8 +120,8 @@
 		});
 
 		focusButton.addEventListener('click', () => {
-			focusTitle.textContent = 'Experiment 4 is running.';
-			focusButton.textContent = 'Container ready';
+			focusTitle.textContent = 'Experiment 1 is ready.';
+			focusButton.textContent = 'Repository ready';
 			focusButton.disabled = true;
 			focusButton.style.opacity = '.6';
 		});
