@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Focus Board</title>
+	<title>Experiment 3 | Git Workflow Lab</title>
 	<style>
 		:root {
 			--ink: #17221b;
@@ -11,7 +11,7 @@
 			--paper: #f5f4ee;
 			--panel: #ffffff;
 			--line: #dce3dc;
-			--mint: #c8f169;
+			--mint: #f2c14e;
 			--coral: #ff795f;
 			--blue: #a9dcff;
 			--shadow: 0 18px 45px rgba(23, 34, 27, .09);
@@ -65,34 +65,34 @@
 <body>
 	<div class="shell">
 		<header>
-			<div class="brand"><span class="brand-mark" aria-hidden="true"></span> Focus Board</div>
-			<div class="date">Monday / 01 April 2024</div>
+			<div class="brand"><span class="brand-mark" aria-hidden="true"></span> Git Workflow Lab</div>
+			<div class="date">Experiment 03 / Pages release</div>
 		</header>
 		<main>
 			<section class="intro">
-				<h1>Make space<br>for good work.</h1>
-				<p>A small, quiet dashboard for keeping today visible and moving one meaningful task forward.</p>
+				<h1>Build, branch,<br>ship.</h1>
+				<p>A compact release board for practicing feature branches, clean merges, and a verified GitHub Pages deployment.</p>
 			</section>
 			<section class="grid" aria-label="Daily focus overview">
 				<article class="panel hero-panel">
 					<div>
-						<div class="eyebrow">Today's focus</div>
-						<h2 id="focus-title">Ship the first thoughtful version.</h2>
-						<button class="complete-button" id="focus-button" type="button">Complete focus</button>
+						<div class="eyebrow">Experiment 03 focus</div>
+						<h2 id="focus-title">Create a clean release.</h2>
+						<button class="complete-button" id="focus-button" type="button">Mark release</button>
 					</div>
-					<div class="hero-foot"><span>2 of 3 milestones complete</span><span class="progress" aria-label="68 percent complete"><span></span></span></div>
+					<div class="hero-foot"><span>0 of 3 checks complete</span><span class="progress" aria-label="0 percent complete"><span style="width: 0"></span></span></div>
 				</article>
 				<div class="side-stack">
 					<article class="panel stat-panel">
-						<div class="eyebrow">Deep work streak</div>
-						<div class="stat">04</div>
-						<div class="stat-label">days in a row</div>
+						<div class="eyebrow">Release status</div>
+						<div class="stat">03</div>
+						<div class="stat-label">workflow checks</div>
 					</article>
 					<article class="panel list-panel" aria-labelledby="next-up-title">
-						<h3 id="next-up-title">Next up</h3>
-						<button class="task" type="button"><span class="task-dot" aria-hidden="true"></span>Review the opening notes</button>
-						<button class="task" type="button"><span class="task-dot" aria-hidden="true"></span>Share the working draft</button>
-						<button class="task" type="button"><span class="task-dot" aria-hidden="true"></span>Take a real break</button>
+						<h3 id="next-up-title">Release checklist</h3>
+						<button class="task" type="button"><span class="task-dot" aria-hidden="true"></span>Create a feature branch</button>
+						<button class="task" type="button"><span class="task-dot" aria-hidden="true"></span>Merge reviewed changes</button>
+						<button class="task" type="button"><span class="task-dot" aria-hidden="true"></span>Verify the Pages deploy</button>
 					</article>
 				</div>
 			</section>
@@ -120,8 +120,8 @@
 		});
 
 		focusButton.addEventListener('click', () => {
-			focusTitle.textContent = 'A thoughtful version is shipped.';
-			focusButton.textContent = 'Focus complete';
+			focusTitle.textContent = 'Experiment 3 is released.';
+			focusButton.textContent = 'Release complete';
 			focusButton.disabled = true;
 			focusButton.style.opacity = '.6';
 		});
