@@ -40,6 +40,8 @@
 		.eyebrow { font: 700 .7rem/1 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
 		.hero-panel h2 { max-width: 470px; margin: 24px 0 0; font-size: clamp(2rem, 4vw, 3.5rem); line-height: .98; letter-spacing: -.03em; }
 		.hero-foot { display: flex; justify-content: space-between; align-items: end; gap: 20px; font: 700 .8rem/1.4 Arial, sans-serif; }
+		.complete-button { align-self: start; padding: 11px 15px; color: var(--paper); background: var(--ink); border: 0; cursor: pointer; font: 700 .72rem Arial, sans-serif; text-transform: uppercase; letter-spacing: .08em; }
+		.complete-button:hover { background: var(--coral); }
 		.progress { width: 130px; height: 8px; background: rgba(23, 34, 27, .15); }
 		.progress span { display: block; width: 68%; height: 100%; background: var(--ink); }
 		.side-stack { display: grid; gap: 18px; }
@@ -75,7 +77,8 @@
 				<article class="panel hero-panel">
 					<div>
 						<div class="eyebrow">Today's focus</div>
-						<h2>Ship the first thoughtful version.</h2>
+						<h2 id="focus-title">Ship the first thoughtful version.</h2>
+						<button class="complete-button" id="focus-button" type="button">Complete focus</button>
 					</div>
 					<div class="hero-foot"><span>2 of 3 milestones complete</span><span class="progress" aria-label="68 percent complete"><span></span></span></div>
 				</article>
@@ -85,15 +88,43 @@
 						<div class="stat">04</div>
 						<div class="stat-label">days in a row</div>
 					</article>
-					<article class="panel list-panel">
-						<h3>Next up</h3>
-						<div class="task"><span class="task-dot"></span>Review the opening notes</div>
-						<div class="task"><span class="task-dot"></span>Share the working draft</div>
-						<div class="task"><span class="task-dot"></span>Take a real break</div>
+					<article class="panel list-panel" aria-labelledby="next-up-title">
+						<h3 id="next-up-title">Next up</h3>
+						<button class="task" type="button"><span class="task-dot" aria-hidden="true"></span>Review the opening notes</button>
+						<button class="task" type="button"><span class="task-dot" aria-hidden="true"></span>Share the working draft</button>
+						<button class="task" type="button"><span class="task-dot" aria-hidden="true"></span>Take a real break</button>
 					</article>
 				</div>
 			</section>
 		</main>
 	</div>
+	<script>
+		const tasks = [...document.querySelectorAll('.task')];
+		const focusButton = document.querySelector('#focus-button');
+		const focusTitle = document.querySelector('#focus-title');
+		const progressText = document.querySelector('.hero-foot span');
+
+		function updateProgress() {
+			const completed = tasks.filter(task => task.dataset.complete === 'true').length;
+			progressText.textContent = `${completed} of ${tasks.length} tasks complete`;
+		}
+
+		tasks.forEach(task => {
+			task.addEventListener('click', () => {
+				const complete = task.dataset.complete === 'true';
+				task.dataset.complete = String(!complete);
+				task.querySelector('.task-dot').style.background = complete ? 'transparent' : 'var(--coral)';
+				task.style.textDecoration = complete ? 'none' : 'line-through';
+				updateProgress();
+			});
+		});
+
+		focusButton.addEventListener('click', () => {
+			focusTitle.textContent = 'A thoughtful version is shipped.';
+			focusButton.textContent = 'Focus complete';
+			focusButton.disabled = true;
+			focusButton.style.opacity = '.6';
+		});
+	</script>
 </body>
 </html>
